@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新婚旅行 2026 💞 Sydney & Fiji</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --ink:    #0e0c0a;
+  --sand:   #f7f2eb;
+  --sand2:  #ede5d8;
+  --gold:   #b8924a;
+  --gold2:  #d4aa6a;
+  --teal:   #1e7b6e;
+  --teal2:  #2aaa97;
+  --ocean:  #0d3a52;
+  --sky:    #4a9fc4;
+  --coral:  #d96b4f;
+  --white:  #ffffff;
+  --muted:  #8a8278;
+  --border: rgba(184,146,74,.2);
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans','Noto Sans JP',sans-serif; background: var(--sand); color: var(--ink); overflow-x: hidden; }
+
+/* NAV */
+nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:0 32px; height:56px; background:rgba(14,12,10,.88); backdrop-filter:blur(14px); border-bottom:1px solid rgba(255,255,255,.07); }
+.nav-logo { font-family:'Playfair Display',serif; font-style:italic; font-size:1.05rem; color:var(--gold2); letter-spacing:.04em; }
+.nav-links { display:flex; gap:26px; list-style:none; }
+.nav-links a { font-size:.73rem; font-weight:500; color:rgba(255,255,255,.5); text-decoration:none; letter-spacing:.1em; text-transform:uppercase; transition:color .2s; }
+.nav-links a:hover { color:var(--gold2); }
+
+/* HERO */
+.hero { position:relative; height:100vh; min-height:640px; display:flex; align-items:flex-end; overflow:hidden; }
+.hero-bg { position:absolute; inset:0; background:linear-gradient(160deg,#0d3a52 0%,#0a2e1e 50%,#061a14 100%); }
+.hero-img { position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80') center/cover no-repeat; opacity:.45; }
+.hero-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(6,20,14,.95) 0%,rgba(6,20,14,.28) 55%,transparent 100%); }
+.particles { position:absolute; inset:0; pointer-events:none; }
+.particle { position:absolute; width:2px; height:2px; background:var(--gold2); border-radius:50%; opacity:0; animation:float-up var(--dur) ease-in infinite var(--del); }
+@keyframes float-up { 0%{opacity:0;transform:translateY(0) scale(1)} 20%{opacity:.6} 100%{opacity:0;transform:translateY(-120px) scale(0)} }
+.hero-content { position:relative; z-index:2; padding:0 8vw 72px; max-width:900px; }
+.hero-label { display:inline-flex; align-items:center; gap:10px; font-size:.72rem; font-weight:500; color:var(--gold2); letter-spacing:.2em; text-transform:uppercase; margin-bottom:20px; }
+.hero-label::before { content:''; display:block; width:32px; height:1px; background:var(--gold); }
+.hero-h1 { font-family:'Playfair Display',serif; font-size:clamp(3.2rem,8vw,6.5rem); font-weight:400; color:var(--white); line-height:1.05; margin-bottom:8px; }
+.hero-h1 em { font-style:italic; color:var(--gold2); }
+.hero-sub { font-size:1rem; color:rgba(255,255,255,.5); margin-bottom:36px; font-weight:300; letter-spacing:.04em; }
+.hero-pills { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:40px; }
+.pill { display:flex; align-items:center; gap:6px; font-size:.8rem; font-weight:500; padding:7px 14px; border-radius:100px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.15); color:var(--white); backdrop-filter:blur(6px); white-space:nowrap; }
+.pill.arr-pill { background:transparent; border:none; color:var(--gold); font-size:.75rem; padding:7px 4px; }
+.hero-stats { display:flex; gap:32px; flex-wrap:wrap; }
+.stat-num { font-family:'Playfair Display',serif; font-size:2rem; font-weight:700; color:var(--white); line-height:1; }
+.stat-label { font-size:.68rem; color:rgba(255,255,255,.4); letter-spacing:.1em; text-transform:uppercase; margin-top:3px; }
+.scroll-hint { position:absolute; bottom:28px; right:8vw; z-index:2; display:flex; flex-direction:column; align-items:center; gap:8px; font-size:.65rem; letter-spacing:.15em; text-transform:uppercase; color:rgba(255,255,255,.3); }
+.scroll-line { width:1px; height:48px; background:linear-gradient(to bottom,var(--gold),transparent); animation:sdrop 1.8s ease-in-out infinite; }
+@keyframes sdrop { 0%,100%{transform:scaleY(0);transform-origin:top} 50%{transform:scaleY(1)} }
+
+/* SECTIONS */
+.section { padding:96px 8vw; }
+.section.dark { background:var(--ink); color:var(--white); }
+.section.mid  { background:var(--sand2); }
+.section.teal-dark { background:#0d2e28; color:var(--white); }
+.sec-label { display:flex; align-items:center; gap:10px; font-size:.72rem; font-weight:500; color:var(--gold); letter-spacing:.2em; text-transform:uppercase; margin-bottom:12px; }
+.sec-label::after { content:''; flex:1; max-width:48px; height:1px; background:var(--gold); opacity:.4; }
+.sec-title { font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3.2rem); font-weight:400; line-height:1.15; margin-bottom:6px; }
+.sec-title em { font-style:italic; }
+.sec-desc { font-size:.88rem; color:var(--muted); margin-bottom:52px; font-weight:300; }
+.section.dark .sec-desc { color:rgba(255,255,255,.38); }
+.section.teal-dark .sec-desc { color:rgba(255,255,255,.42); }
+.divider-gold { height:1px; background:linear-gradient(90deg,transparent,var(--gold),transparent); opacity:.25; margin:64px 0; }
+
+/* HOTEL CARDS */
+.hotels-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:18px; }
+.hotel-card { position:relative; border-radius:20px; overflow:hidden; aspect-ratio:3/2; cursor:pointer; }
+.hotel-card img { width:100%; height:100%; object-fit:cover; transition:transform .65s ease; display:block; }
+.hotel-card:hover img { transform:scale(1.08); }
+.hc-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(6,20,14,.92) 0%,rgba(6,20,14,.2) 60%,transparent 100%); display:flex; flex-direction:column; justify-content:flex-end; padding:22px; }
+.hc-flag { font-size:1.3rem; margin-bottom:5px; }
+.hc-dest { font-size:.68rem; font-weight:500; color:var(--gold2); letter-spacing:.12em; text-transform:uppercase; margin-bottom:3px; }
+.hc-name { font-family:'Playfair Display',serif; font-size:1.05rem; color:var(--white); line-height:1.3; }
+.hc-nights { font-size:.73rem; color:rgba(255,255,255,.5); margin-top:4px; }
+.hc-mapbtn { display:inline-flex; align-items:center; gap:5px; margin-top:10px; font-size:.72rem; font-weight:500; color:var(--gold2); text-decoration:none; border:1px solid rgba(212,170,106,.4); border-radius:100px; padding:5px 13px; background:rgba(212,170,106,.1); transition:all .2s; opacity:0; transform:translateY(6px); transition:opacity .25s,transform .25s,background .2s; }
+.hotel-card:hover .hc-mapbtn { opacity:1; transform:translateY(0); }
+.hc-mapbtn:hover { background:rgba(212,170,106,.25); }
+.hc-mapbtn svg { width:12px; height:12px; fill:var(--gold2); flex-shrink:0; }
+
+/* FLIGHTS */
+.flights-list { display:flex; flex-direction:column; }
+.fl-row { display:grid; grid-template-columns:68px 1fr auto; gap:18px; align-items:center; padding:18px 20px; border-bottom:1px solid rgba(255,255,255,.07); transition:background .2s; }
+.fl-row:first-child { border-top:1px solid rgba(255,255,255,.07); }
+.fl-row:hover { background:rgba(255,255,255,.04); border-radius:10px; }
+.fl-day { text-align:center; background:rgba(184,146,74,.12); border:1px solid rgba(184,146,74,.25); border-radius:12px; padding:8px 4px; }
+.fl-dn { font-family:'Playfair Display',serif; font-size:1.25rem; font-weight:700; color:var(--gold2); line-height:1; }
+.fl-dd { font-size:.63rem; color:var(--gold); margin-top:2px; letter-spacing:.05em; }
+.fl-route { font-size:1rem; font-weight:500; color:var(--white); display:flex; align-items:center; gap:9px; flex-wrap:wrap; }
+.fl-plane { font-size:.85rem; opacity:.55; }
+.fl-time { font-size:.78rem; color:rgba(255,255,255,.38); margin-top:4px; }
+.fl-maplink { display:inline-flex; align-items:center; gap:4px; font-size:.7rem; font-weight:500; color:var(--teal2); text-decoration:none; margin-top:5px; transition:color .2s; }
+.fl-maplink:hover { color:var(--gold2); }
+.fl-maplink svg { width:11px; height:11px; fill:currentColor; }
+.fl-fare { font-size:.88rem; font-weight:500; color:var(--gold2); text-align:right; white-space:nowrap; }
+.fl-card { font-size:.7rem; color:rgba(255,255,255,.32); margin-top:3px; }
+
+/* INSURANCE */
+.ins-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:48px; }
+@media(max-width:580px){.ins-grid{grid-template-columns:1fr}}
+.ins-card { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:22px 24px; }
+.ins-who { font-size:.85rem; font-weight:500; color:var(--white); margin-bottom:14px; }
+.ins-row { display:flex; justify-content:space-between; font-size:.8rem; padding:6px 0; border-bottom:1px solid rgba(255,255,255,.05); }
+.ins-kd { color:rgba(255,255,255,.42); }
+.ins-am { color:var(--gold2); font-weight:500; }
+.ins-total { display:flex; justify-content:space-between; font-size:.9rem; font-weight:700; color:var(--gold2); margin-top:12px; padding-top:12px; border-top:1px solid rgba(184,146,74,.3); }
+.warn-box { margin-top:24px; display:flex; gap:12px; align-items:flex-start; background:rgba(217,107,79,.09); border:1px solid rgba(217,107,79,.32); border-radius:14px; padding:16px 20px; }
+.warn-txt { font-size:.83rem; color:rgba(255,255,255,.78); line-height:1.65; }
+
+/* CHAPTER (day split) */
+.chapter { display:grid; grid-template-columns:1fr 1fr; min-height:500px; }
+.chapter.flip { direction:rtl; }
+.chapter.flip > * { direction:ltr; }
+@media(max-width:768px){.chapter,.chapter.flip{grid-template-columns:1fr;direction:ltr}}
+.ch-photo { position:relative; overflow:hidden; min-height:320px; }
+.ch-photo img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .7s ease; }
+.chapter:hover .ch-photo img { transform:scale(1.05); }
+.ch-photo-overlay { position:absolute; inset:0; background:linear-gradient(135deg,rgba(13,58,82,.48) 0%,transparent 60%); }
+.ch-photo-tag { position:absolute; top:18px; left:18px; background:rgba(14,12,10,.72); backdrop-filter:blur(8px); border:1px solid rgba(184,146,74,.3); border-radius:100px; padding:5px 14px; font-size:.7rem; font-weight:500; color:var(--gold2); letter-spacing:.1em; }
+.ch-content { background:var(--ink); color:var(--white); padding:52px 48px; display:flex; flex-direction:column; justify-content:center; }
+@media(max-width:960px){.ch-content{padding:36px 28px}}
+.ch-date { font-size:.7rem; font-weight:500; color:var(--gold); letter-spacing:.15em; text-transform:uppercase; margin-bottom:10px; }
+.ch-title { font-family:'Playfair Display',serif; font-size:1.75rem; font-weight:400; line-height:1.2; margin-bottom:8px; }
+.ch-sub { font-size:.82rem; color:rgba(255,255,255,.38); margin-bottom:28px; }
+.tl { display:flex; flex-direction:column; }
+.tl-item { display:grid; grid-template-columns:50px 26px 1fr; gap:9px; align-items:start; padding:8px 0; border-bottom:1px solid rgba(255,255,255,.05); }
+.tl-item:last-child { border-bottom:none; }
+.tl-time { font-size:.7rem; color:rgba(255,255,255,.28); padding-top:3px; }
+.tl-ico { font-size:1rem; line-height:1.5; text-align:center; }
+.tl-main { font-size:.87rem; color:var(--white); line-height:1.45; }
+.tl-note { font-size:.74rem; color:rgba(255,255,255,.33); margin-top:2px; line-height:1.4; }
+.map-link { display:inline-flex; align-items:center; gap:4px; font-size:.7rem; font-weight:500; color:var(--teal2); text-decoration:none; margin-top:4px; transition:color .2s; }
+.map-link:hover { color:var(--gold2); }
+.map-link svg { width:11px; height:11px; fill:currentColor; }
+
+/* FIJI HERO */
+.fiji-hero { position:relative; height:480px; overflow:hidden; display:flex; align-items:flex-end; }
+.fiji-hero img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; animation:slow-zoom 20s ease-in-out infinite alternate; }
+@keyframes slow-zoom { from{transform:scale(1)} to{transform:scale(1.08)} }
+.fiji-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(13,46,40,.95) 0%,rgba(13,46,40,.28) 55%,transparent 100%); }
+.fiji-hero-inner { position:relative; z-index:1; padding:0 8vw 56px; }
+.fiji-hero-inner .sec-label { color:var(--teal2); }
+.fiji-hero-inner .sec-label::after { background:var(--teal2); }
+.fiji-hero-inner .sec-title { color:var(--white); }
+.fiji-hero-inner .sec-desc { color:rgba(255,255,255,.45); margin-bottom:0; }
+
+/* FERRY ROUTE */
+.ferry-flow { display:flex; align-items:center; flex-wrap:wrap; justify-content:center; gap:0; padding:48px 8vw 40px; background:#0d2e28; }
+.fstop { display:flex; flex-direction:column; align-items:center; gap:5px; min-width:130px; }
+.fstop-icon { font-size:2rem; }
+.fstop-name { font-family:'Playfair Display',serif; font-size:1rem; color:var(--white); }
+.fstop-date { font-size:.7rem; color:rgba(255,255,255,.38); }
+.fconn { flex:1; min-width:60px; max-width:100px; display:flex; flex-direction:column; align-items:center; gap:4px; padding:0 6px; }
+.fconn-line { width:100%; height:1px; background:linear-gradient(90deg,rgba(42,170,151,.3),rgba(42,170,151,.85),rgba(42,170,151,.3)); position:relative; }
+.fconn-line::after { content:'▶'; position:absolute; right:-4px; top:50%; transform:translateY(-50%); font-size:.58rem; color:var(--teal2); }
+.fconn-lbl { font-size:.67rem; color:var(--teal2); letter-spacing:.05em; white-space:nowrap; }
+
+/* ISLAND CARDS */
+.island-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; padding:0 8vw 80px; background:#0d2e28; }
+@media(max-width:768px){.island-cards{grid-template-columns:1fr}}
+.isl { border-radius:20px; overflow:hidden; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); transition:transform .3s,border-color .3s; }
+.isl:hover { transform:translateY(-6px); border-color:rgba(255,255,255,.18); }
+.isl-img { position:relative; height:190px; overflow:hidden; }
+.isl-img img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .55s; }
+.isl:hover .isl-img img { transform:scale(1.08); }
+.isl-tag { position:absolute; top:12px; right:12px; background:rgba(14,12,10,.75); backdrop-filter:blur(6px); border-radius:100px; padding:4px 10px; font-size:.65rem; color:rgba(255,255,255,.8); letter-spacing:.07em; }
+.isl-body { padding:22px; }
+.isl-flag { font-size:1.5rem; margin-bottom:7px; }
+.isl-name { font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--white); margin-bottom:2px; }
+.isl-hotel { font-size:.76rem; color:rgba(255,255,255,.45); margin-bottom:3px; }
+.isl-dates { font-size:.72rem; color:var(--gold2); font-weight:500; margin-bottom:14px; }
+.isl-feats { list-style:none; display:flex; flex-direction:column; gap:6px; margin-bottom:16px; }
+.isl-feats li { font-size:.8rem; color:rgba(255,255,255,.68); display:flex; gap:7px; align-items:flex-start; line-height:1.4; }
+.isl-feats li::before { content:'→'; color:var(--teal2); flex-shrink:0; font-size:.73rem; margin-top:1px; }
+.isl-mapbtn { display:flex; align-items:center; justify-content:center; gap:6px; width:100%; padding:9px; background:rgba(42,170,151,.12); border:1px solid rgba(42,170,151,.3); border-radius:10px; color:var(--teal2); font-size:.77rem; font-weight:500; text-decoration:none; transition:background .2s; }
+.isl-mapbtn:hover { background:rgba(42,170,151,.25); }
+.isl-mapbtn svg { width:13px; height:13px; fill:currentColor; }
+
+/* TODO */
+.todo-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(258px,1fr)); gap:13px; }
+.todo-card { display:flex; gap:13px; align-items:flex-start; padding:17px 19px; border-radius:14px; border:1px solid rgba(184,146,74,.15); background:rgba(184,146,74,.04); transition:background .2s,border-color .2s; }
+.todo-card:hover { background:rgba(184,146,74,.09); border-color:rgba(184,146,74,.3); }
+.todo-card.urg { border-color:rgba(217,107,79,.22); background:rgba(217,107,79,.05); }
+.todo-card.urg:hover { background:rgba(217,107,79,.1); }
+.todo-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; margin-top:6px; }
+.todo-dot.red { background:#e24b4a; box-shadow:0 0 8px rgba(226,75,74,.55); }
+.todo-dot.yellow { background:var(--gold2); box-shadow:0 0 8px rgba(212,170,106,.45); }
+.todo-title { font-size:.9rem; font-weight:500; margin-bottom:3px; }
+.todo-desc { font-size:.77rem; color:var(--muted); line-height:1.5; }
+
+/* PACKING */
+.pack-cols { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:28px; }
+.pack-group-title { font-size:.7rem; font-weight:500; color:var(--gold); letter-spacing:.14em; text-transform:uppercase; margin-bottom:13px; padding-bottom:8px; border-bottom:1px solid var(--border); }
+.pack-list { list-style:none; display:flex; flex-direction:column; gap:1px; }
+.pack-list li { display:flex; align-items:center; gap:10px; font-size:.85rem; color:var(--ink); padding:7px 0; border-bottom:1px solid rgba(14,12,10,.06); cursor:pointer; user-select:none; transition:color .15s; }
+.pack-list li:hover { color:var(--teal); }
+.pack-list li.checked { color:var(--muted); text-decoration:line-through; }
+.pack-check { width:17px; height:17px; border:1.5px solid rgba(14,12,10,.2); border-radius:5px; display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:all .15s; }
+.pack-list li.checked .pack-check { background:var(--teal); border-color:var(--teal); }
+.pack-list li.checked .pack-check::after { content:'✓'; font-size:.7rem; color:#fff; font-weight:700; }
+
+/* FOOTER */
+footer { background:var(--ink); color:var(--white); text-align:center; padding:80px 8vw 60px; }
+.footer-title { font-family:'Playfair Display',serif; font-size:2.2rem; font-style:italic; color:var(--gold2); margin-bottom:10px; }
+.footer-sub { font-size:.84rem; color:rgba(255,255,255,.3); letter-spacing:.08em; }
+
+/* REVEAL */
+.reveal { opacity:0; transform:translateY(22px); transition:opacity .7s ease,transform .7s ease; }
+.reveal.visible { opacity:1; transform:none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">新婚旅行 '26</div>
+  <ul class="nav-links">
+    <li><a href="#hotels">ホテル</a></li>
+    <li><a href="#flights">フライト</a></li>
+    <li><a href="#sydney">シドニー</a></li>
+    <li><a href="#fiji">フィジー</a></li>
+    <li><a href="#checklist">準備</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-img" id="heroImg"></div>
+  <div class="hero-overlay"></div>
+  <div class="particles" id="particles"></div>
+  <div class="hero-content">
+    <div class="hero-label">Honeymoon Journey 2026</div>
+    <h1 class="hero-h1">新婚<em>旅行</em></h1>
+    <p class="hero-sub">2026年5月10日（日）〜5月20日（水）　11日間の旅</p>
+    <div class="hero-pills">
+      <span class="pill">🇯🇵 福岡</span>
+      <span class="pill arr-pill">→</span>
+      <span class="pill">🇭🇰 香港</span>
+      <span class="pill arr-pill">→</span>
+      <span class="pill">🇦🇺 シドニー</span>
+      <span class="pill arr-pill">→</span>
+      <span class="pill">🇫🇯 フィジー</span>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">11</div><div class="stat-label">Days</div></div>
+      <div><div class="stat-num">2</div><div class="stat-label">Countries</div></div>
+      <div><div class="stat-num">3</div><div class="stat-label">Islands</div></div>
+      <div><div class="stat-num">4</div><div class="stat-label">Hotels</div></div>
+    </div>
+  </div>
+  <div class="scroll-hint"><div class="scroll-line"></div>SCROLL</div>
+</section>
+
+<!-- HOTELS -->
+<section class="section dark reveal" id="hotels" style="padding-bottom:60px;">
+  <div class="sec-label">Where We Stay</div>
+  <h2 class="sec-title">宿泊先 <em>一覧</em></h2>
+  <p class="sec-desc">4か所のホテル・リゾートに滞在</p>
+  <div class="hotels-grid">
+    <div class="hotel-card">
+      <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80" alt="Sydney Hotel" loading="lazy">
+      <div class="hc-overlay">
+        <div class="hc-flag">🇦🇺</div>
+        <div class="hc-dest">Sydney · Day 2〜4</div>
+        <div class="hc-name">Hilton Sydney</div>
+        <div class="hc-nights">5/11〜13　2泊　443.7AUD 雅大AMEX済</div>
+        <a class="hc-mapbtn" href="https://maps.app.goo.gl/jrHiGVZucHLX8yXQ6" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Google Maps で見る</a>
+      </div>
+    </div>
+    <div class="hotel-card">
+      <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80" alt="Fiji Denarau" loading="lazy">
+      <div class="hc-overlay">
+        <div class="hc-flag">🇫🇯</div>
+        <div class="hc-dest">Fiji Denarau · Day 5</div>
+        <div class="hc-name">ザ・パームズ デナウラ フィジー</div>
+        <div class="hc-nights">5/14夜　1泊　¥24,746</div>
+        <a class="hc-mapbtn" href="https://maps.app.goo.gl/Q2FB8roqZrtjxeWu8" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Google Maps で見る</a>
+      </div>
+    </div>
+    <div class="hotel-card">
+      <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=800&q=80" alt="Tokoriki" loading="lazy">
+      <div class="hc-overlay">
+        <div class="hc-flag">🏝</div>
+        <div class="hc-dest">Tokoriki Island · Day 6〜8</div>
+        <div class="hc-name">シェラトン リゾート&スパ トコリキ</div>
+        <div class="hc-nights">5/15〜17　2泊　1,451FJD　ハネムーン連絡済</div>
+        <a class="hc-mapbtn" href="https://maps.app.goo.gl/NUYvBm1R5DBHP1ZM7" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Google Maps で見る</a>
+      </div>
+    </div>
+    <div class="hotel-card">
+      <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=800&q=80" alt="Momi Bay" loading="lazy">
+      <div class="hc-overlay">
+        <div class="hc-flag">🌊</div>
+        <div class="hc-dest">Momi Bay · Day 8〜10</div>
+        <div class="hc-name">フィジー マリオット リゾート モミベイ</div>
+        <div class="hc-nights">5/17〜19　2泊　1,687FJD + 72,000p</div>
+        <a class="hc-mapbtn" href="https://maps.app.goo.gl/5rZoN85F3JywFQ846" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Google Maps で見る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLIGHTS -->
+<section class="section dark reveal" id="flights" style="padding-top:0;">
+  <div class="divider-gold"></div>
+  <div class="sec-label">Flights & Insurance</div>
+  <h2 class="sec-title">フライト<em>情報</em></h2>
+  <p class="sec-desc">全フライト・支払い済み確認</p>
+  <div class="flights-list">
+    <div class="fl-row">
+      <div class="fl-day"><div class="fl-dn">1</div><div class="fl-dd">5/10</div></div>
+      <div>
+        <div class="fl-route">福岡 <span class="fl-plane">✈</span> 香港</div>
+        <div class="fl-time">16:00 発 → 18:45 着　JL便　空港ラウンジで昼食</div>
+        <a class="fl-maplink" href="https://www.google.com/maps/search/?q=福岡空港" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>福岡空港</a>
+      </div>
+      <div class="fl-fare">¥125,934<div class="fl-card">綾乃JALカード 済</div></div>
+    </div>
+    <div class="fl-row">
+      <div class="fl-day"><div class="fl-dn">1</div><div class="fl-dd">5/10</div></div>
+      <div>
+        <div class="fl-route">香港 <span class="fl-plane">✈</span> シドニー</div>
+        <div class="fl-time">22:05 発 → 翌09:45 着　機内食・夜食あり</div>
+      </div>
+      <div class="fl-fare">上記含む<div class="fl-card">座席指定込み</div></div>
+    </div>
+    <div class="fl-row">
+      <div class="fl-day"><div class="fl-dn">5</div><div class="fl-dd">5/14</div></div>
+      <div>
+        <div class="fl-route">シドニー <span class="fl-plane">✈</span> ナンディ（フィジー）</div>
+        <div class="fl-time">13:15 発 → 19:15 着</div>
+        <a class="fl-maplink" href="https://www.google.com/maps/search/?q=Sydney+Airport+Kingsford+Smith" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Sydney Airport</a>
+      </div>
+      <div class="fl-fare">AUD 657<div class="fl-card">雅大JALカード 済</div></div>
+    </div>
+    <div class="fl-row">
+      <div class="fl-day"><div class="fl-dn">10</div><div class="fl-dd">5/19</div></div>
+      <div>
+        <div class="fl-route">ナンディ <span class="fl-plane">✈</span> 成田</div>
+        <div class="fl-time">23:55 発 → 翌06:20 着</div>
+      </div>
+      <div class="fl-fare">各自マイル+¥20,000<div class="fl-card">それぞれのマイル</div></div>
+    </div>
+    <div class="fl-row">
+      <div class="fl-day"><div class="fl-dn">11</div><div class="fl-dd">5/20</div></div>
+      <div>
+        <div class="fl-route">成田 <span class="fl-plane">✈</span> 福岡</div>
+        <div class="fl-time">10:00 発 → 12:10 着　預け荷物なし・座席指定済み</div>
+      </div>
+      <div class="fl-fare">¥15,180<div class="fl-card">綾乃ダイナース 済</div></div>
+    </div>
+  </div>
+  <div class="ins-grid">
+    <div class="ins-card">
+      <div class="ins-who">👤 綾乃</div>
+      <div class="ins-row"><span class="ins-kd">ダイナース</span><span class="ins-am">治療 300万</span></div>
+      <div class="ins-row"><span class="ins-kd">JALカード</span><span class="ins-am">治療 150万</span></div>
+      <div class="ins-row"><span class="ins-kd">Dカードゴールド</span><span class="ins-am">治療 300万</span></div>
+      <div class="ins-row"><span class="ins-kd">ヒルトンAMEX</span><span class="ins-am">治療 100万（家族）</span></div>
+      <div class="ins-total"><span>合計</span><span>850万円</span></div>
+    </div>
+    <div class="ins-card">
+      <div class="ins-who">👤 まーくん</div>
+      <div class="ins-row"><span class="ins-kd">ダイナース</span><span class="ins-am">治療 300万</span></div>
+      <div class="ins-row"><span class="ins-kd">JALカード</span><span class="ins-am">治療 150万</span></div>
+      <div class="ins-row"><span class="ins-kd">ヒルトンAMEX</span><span class="ins-am">治療 100万</span></div>
+      <div class="ins-total"><span>合計</span><span>550万円</span></div>
+    </div>
+  </div>
+  <div class="warn-box">
+    <span>⚠️</span>
+    <div class="warn-txt">福岡空港までの交通費を<strong>ヒルトンAMEXで2人分決済し、領収書を発行</strong>しておくこと（ダイナース付帯保険の利用条件）</div>
+  </div>
+</section>
+
+<!-- SYDNEY -->
+<div id="sydney">
+  <!-- Day 2 -->
+  <div class="chapter reveal">
+    <div class="ch-photo">
+      <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?w=900&q=80" alt="Sydney Opera House" loading="lazy">
+      <div class="ch-photo-overlay"></div>
+      <div class="ch-photo-tag">Day 2 · 5/11</div>
+    </div>
+    <div class="ch-content">
+      <div class="ch-date">May 11 · Monday</div>
+      <h2 class="ch-title">シドニー到着<br><em>& 観光初日</em></h2>
+      <p class="ch-sub">Hilton → カフェ → オペラハウス → パブ → ジェラート</p>
+      <div class="tl">
+        <div class="tl-item"><span class="tl-time">09:45</span><span class="tl-ico">🛬</span><div><div class="tl-main">シドニー空港 到着</div></div></div>
+        <div class="tl-item"><span class="tl-time">〜11:00</span><span class="tl-ico">🚃</span><div><div class="tl-main">Airport Link or Uber → Hilton Sydney</div><div class="tl-note">Uber 60AUD超えたら電車も検討</div></div></div>
+        <div class="tl-item"><span class="tl-time">12:00</span><span class="tl-ico">☕</span><div><div class="tl-main">Single O Surry Hills</div><div class="tl-note">シドニー屈指のスペシャルティカフェ</div><a class="map-link" href="https://www.google.com/maps/search/?q=Single+O+Surry+Hills+Sydney" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>地図で見る</a></div></div>
+        <div class="tl-item"><span class="tl-time">13:45</span><span class="tl-ico">🌿</span><div><div class="tl-main">Royal Botanic Garden 散歩</div><div class="tl-note">「ミセス・マッコリーズ・ポイント」が絶景撮影スポット</div><a class="map-link" href="https://www.google.com/maps/search/?q=Mrs+Macquaries+Point+Sydney" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>地図で見る</a></div></div>
+        <div class="tl-item"><span class="tl-time">15:00</span><span class="tl-ico">🎭</span><div><div class="tl-main">Sydney Opera House</div><a class="map-link" href="https://www.google.com/maps/search/?q=Sydney+Opera+House" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>地図で見る</a></div></div>
+        <div class="tl-item"><span class="tl-time">15:45</span><span class="tl-ico">🛍</span><div><div class="tl-main">The Rocks お土産・雑貨</div><a class="map-link" href="https://www.google.com/maps/search/?q=The+Rocks+Sydney" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>地図で見る</a></div></div>
+        <div class="tl-item"><span class="tl-time">18:00</span><span class="tl-ico">🍻</span><div><div class="tl-main">The Lord Nelson Brewery Hotel</div><div class="tl-note">シドニー最古のパブ（1842年創業）Rocks地区</div><a class="map-link" href="https://www.google.com/maps/search/?q=Lord+Nelson+Brewery+Hotel+Sydney" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>地図で見る</a></div></div>
+        <div class="tl-item"><span class="tl-time">19:45</span><span class="tl-ico">🍦</span><div><div class="tl-main">Messina ジェラート → 夜のオペラハウスを眺める</div><a class="map-link" href="https://www.google.com/maps/search/?q=Gelato+Messina+The+Rocks+Sydney" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>地図で見る</a></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 3 -->
+  <div class="chapter flip reveal">
+    <div class="ch-photo">
+      <img src="https://images.unsplash.com/photo-1534567406576-a5a0d63d5a97?w=900&q=80" alt="Taronga Zoo" loading="lazy">
+      <div class="ch-photo-overlay"></div>
+      <div class="ch-photo-tag">Day 3 · 5/12</div>
+    </div>
+    <div class="ch-content">
+      <div class="ch-date">May 12 · Tuesday</div>
+      <h2 class="ch-title">タロンガ動物園<br><em>& ミートパイ</em></h2>
+      <p class="ch-sub">フェリーで動物園 → チョコレート → Harry's Cafe</p>
+      <div class="tl">
+        <div class="tl-item"><span class="tl-time">08:30</span><span class="tl-ico">🍽</span><div><div class="tl-main">ホテルビュッフェ</div></div></div>
+        <div class="tl-item"><span class="tl-time">11:15</span><span class="tl-ico">⛴</span><div><div class="tl-main">Circular Quay Wharf4 → フェリーで動物園へ</div><div class="tl-note">F2ライン 約12分　T2/T3/T8で Circular Quay駅まで</div><a class="map-link" href="https://www.google.com/maps/search/?q=Circular+Quay+Wharf+4+Sydney" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>乗り場の地図</a></div></div>
+        <div class="tl-item"><span class="tl-time">11:30</span><span class="tl-ico">🐨</span><div><div class="tl-main">Taronga Zoo</div><div class="tl-note">〜14:30 コアラ・カンガルーをたっぷり</div><a class="map-link" href="https://www.google.com/maps/search/?q=Taronga+Zoo+Sydney" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>地図で見る</a></div></div>
+        <div class="tl-item"><span class="tl-time">16:15</span><span class="tl-ico">🍫</span><div><div class="tl-main">Koko Black → Haigh's</div><div class="tl-note">チョコ・珈琲休憩　徒歩2分</div><a class="map-link" href="https://www.google.com/maps/search/?q=Koko+Black+Sydney+CBD" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>地図で見る</a></div></div>
+        <div class="tl-item"><span class="tl-time">18:00</span><span class="tl-ico">🥧</span><div><div class="tl-main">Harry's Cafe de Wheels ミートパイ！</div><div class="tl-note">ウルムルー本店・海沿い・外席のみ</div><a class="map-link" href="https://www.google.com/maps/search/?q=Harry%27s+Cafe+de+Wheels+Woolloomooloo" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>地図で見る</a></div></div>
+        <div class="tl-item"><span class="tl-time">19:15</span><span class="tl-ico">🛒</span><div><div class="tl-main">Woolworths Town Hall 店</div><a class="map-link" href="https://www.google.com/maps/search/?q=Woolworths+Town+Hall+Sydney" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>地図で見る</a></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 4 -->
+  <div class="chapter reveal">
+    <div class="ch-photo">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80" alt="Sydney QVB" loading="lazy">
+      <div class="ch-photo-overlay"></div>
+      <div class="ch-photo-tag">Day 4 · 5/13</div>
+    </div>
+    <div class="ch-content">
+      <div class="ch-date">May 13 · Wednesday</div>
+      <h2 class="ch-title">QVB <em>&</em><br>友人宅 Party</h2>
+      <p class="ch-sub">シドニー最終日　チェックアウト後もたっぷり</p>
+      <div class="tl">
+        <div class="tl-item"><span class="tl-time">10:30</span><span class="tl-ico">🏨</span><div><div class="tl-main">チェックアウト（荷物は一旦預ける）</div></div></div>
+        <div class="tl-item"><span class="tl-time">10:40</span><span class="tl-ico">🛍</span><div><div class="tl-main">Queen Victoria Building（QVB）</div><div class="tl-note">1898年築のレトロな建物・ホテル目の前</div><a class="map-link" href="https://www.google.com/maps/search/?q=Queen+Victoria+Building+Sydney" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>地図で見る</a></div></div>
+        <div class="tl-item"><span class="tl-time">12:00</span><span class="tl-ico">🚗</span><div><div class="tl-main">ももに迎えに来てもらう（可能なら）</div></div></div>
+        <div class="tl-item"><span class="tl-time">13:00</span><span class="tl-ico">🛍</span><div><div class="tl-main">DFO でショッピング</div><div class="tl-note">〜16:00　もも車で移動（所要45分）</div><a class="map-link" href="https://www.google.com/maps/search/?q=DFO+Homebush+Sydney" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>地図で見る</a></div></div>
+        <div class="tl-item"><span class="tl-time">16:20</span><span class="tl-ico">🛒</span><div><div class="tl-main">Woolworths Carlingford 買い出し</div></div></div>
+        <div class="tl-item"><span class="tl-time">17:30</span><span class="tl-ico">🎉</span><div><div class="tl-main">もも・ニック宅でパーティー 🥂</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FIJI -->
+<div id="fiji">
+  <div class="fiji-hero">
+    <img src="https://images.unsplash.com/photo-1589197331516-4d84b72ebde3?w=1600&q=80" alt="Fiji" loading="lazy">
+    <div class="fiji-overlay"></div>
+    <div class="fiji-hero-inner">
+      <div class="sec-label">Day 5〜10</div>
+      <h2 class="sec-title">フィジー 🇫🇯</h2>
+      <p class="sec-desc">5月14日（木）〜19日（火）　5泊　3つの島を巡るリゾートステイ</p>
+    </div>
+  </div>
+
+  <!-- Ferry Route -->
+  <div class="ferry-flow">
+    <div class="fstop"><div class="fstop-icon">🇫🇯</div><div class="fstop-name">デナウラ</div><div class="fstop-date">5/14夜</div></div>
+    <div class="fconn"><div class="fconn-line"></div><div class="fconn-lbl">5/15 12:00発</div></div>
+    <div class="fstop"><div class="fstop-icon">🏝</div><div class="fstop-name">トコリキ島</div><div class="fstop-date">5/15〜17</div></div>
+    <div class="fconn"><div class="fconn-line"></div><div class="fconn-lbl">5/17 10:30発</div></div>
+    <div class="fstop"><div class="fstop-icon">🌊</div><div class="fstop-name">モミベイ</div><div class="fstop-date">5/17〜19</div></div>
+  </div>
+
+  <!-- Island cards -->
+  <div class="island-cards">
+    <div class="isl">
+      <div class="isl-img">
+        <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=600&q=80" alt="Denarau" loading="lazy">
+        <div class="isl-tag">1泊</div>
+      </div>
+      <div class="isl-body">
+        <div class="isl-flag">🇫🇯</div>
+        <div class="isl-name">フィジー本島</div>
+        <div class="isl-hotel">ザ・パームズ デナウラ フィジー</div>
+        <div class="isl-dates">5/14夜 到着　¥24,746</div>
+        <ul class="isl-feats">
+          <li>港まで徒歩でアクセス可能</li>
+          <li>スーパーが近く食料調達しやすい</li>
+          <li>翌朝の買い込みをここで済ませる</li>
+        </ul>
+        <a class="isl-mapbtn" href="https://maps.app.goo.gl/Q2FB8roqZrtjxeWu8" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Google Maps で見る</a>
+      </div>
+    </div>
+    <div class="isl">
+      <div class="isl-img">
+        <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=600&q=80" alt="Tokoriki" loading="lazy">
+        <div class="isl-tag">2泊　ハネムーン連絡済</div>
+      </div>
+      <div class="isl-body">
+        <div class="isl-flag">🏝</div>
+        <div class="isl-name">トコリキ島</div>
+        <div class="isl-hotel">シェラトン リゾート&スパ トコリキ</div>
+        <div class="isl-dates">5/15〜17　1,451FJD（2泊）</div>
+        <ul class="isl-feats">
+          <li>外洋シュノーケリングツアー申込</li>
+          <li>Cocoda クッキングクラス（15:00〜）</li>
+          <li>大人専用プール &amp; BAR</li>
+          <li>Torch Lighting（17:45〜）</li>
+        </ul>
+        <a class="isl-mapbtn" href="https://maps.app.goo.gl/NUYvBm1R5DBHP1ZM7" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Google Maps で見る</a>
+      </div>
+    </div>
+    <div class="isl">
+      <div class="isl-img">
+        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&q=80" alt="Momi Bay" loading="lazy">
+        <div class="isl-tag">2泊　海の見える部屋</div>
+      </div>
+      <div class="isl-body">
+        <div class="isl-flag">🌊</div>
+        <div class="isl-name">モミベイ</div>
+        <div class="isl-hotel">フィジー マリオット リゾート モミベイ</div>
+        <div class="isl-dates">5/17〜19　1,687FJD + 72,000p</div>
+        <ul class="isl-feats">
+          <li>ワインペアリングコース 予約済（630FJD）</li>
+          <li>SAP / カヤック / ジェットスキー</li>
+          <li>チェックアウト後も施設利用可</li>
+        </ul>
+        <a class="isl-mapbtn" href="https://maps.app.goo.gl/5rZoN85F3JywFQ846" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Google Maps で見る</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CHECKLIST -->
+<section class="section mid reveal" id="checklist">
+  <div class="sec-label">Before You Go</div>
+  <h2 class="sec-title">残<em>タスク</em></h2>
+  <p class="sec-desc">出発前に必ず済ませること</p>
+  <div class="todo-grid" style="margin-bottom:72px;">
+    <div class="todo-card urg"><div class="todo-dot red"></div><div><div class="todo-title">マリンスポーツの予約</div><div class="todo-desc">トコリキ島での外洋シュノーケリングツアー等</div></div></div>
+    <div class="todo-card urg"><div class="todo-dot red"></div><div><div class="todo-title">AUD / FJD 両替</div><div class="todo-desc">オーストラリアドルとフィジードルを準備</div></div></div>
+    <div class="todo-card urg"><div class="todo-dot red"></div><div><div class="todo-title">出入国書類の印刷</div><div class="todo-desc">各国の入国に必要な書類を印刷・準備</div></div></div>
+    <div class="todo-card urg"><div class="todo-dot red"></div><div><div class="todo-title">帰国後のホテル手配</div><div class="todo-desc">自宅に泊まれない場合の予備（1泊）</div></div></div>
+    <div class="todo-card"><div class="todo-dot yellow"></div><div><div class="todo-title">酔い止め・風邪薬 購入</div><div class="todo-desc">フェリー乗船に備えて酔い止めを準備</div></div></div>
+    <div class="todo-card"><div class="todo-dot yellow"></div><div><div class="todo-title">携帯用歯ブラシ購入</div><div class="todo-desc">機内・移動中用</div></div></div>
+  </div>
+
+  <div class="sec-label">Packing List</div>
+  <h2 class="sec-title">持ち物<em>チェックリスト</em></h2>
+  <p class="sec-desc">タップしてチェック ✓</p>
+  <div class="pack-cols">
+    <div>
+      <div class="pack-group-title">✈️ 書類・電子機器</div>
+      <ul class="pack-list">
+        <li onclick="this.classList.toggle('checked')"><span class="pack-check"></span>パスポート</li>
+        <li onclick="this.classList.toggle('checked')"><span class="pack-check"></span>クレジットカード各種</li>
+        <li onclick="this.classList.toggle('checked')"><span class="pack-check"></span>プラグ変換（Iタイプ）</li>
+        <li onclick="this.classList.toggle('checked')"><span class="pack-check"></span>出入国書類（印刷済み）</li>
+        <li onclick="this.classList.toggle('checked')"><span class="pack-check"></span>スマートフォン・充電器</li>
+      </ul>
+    </div>
+    <div>
+      <div class="pack-group-title">🧴 衛生・スキンケア</div>
+      <ul class="pack-list">
+        <li onclick="this.classList.toggle('checked')"><span class="pack-check"></span>歯ブラシ（携帯用）</li>
+        <li onclick="this.classList.toggle('checked')"><span class="pack-check"></span>化粧水・乳液・クレンジング</li>
+        <li onclick="this.classList.toggle('checked')"><span class="pack-check"></span>日焼け止め</li>
+        <li onclick="this.classList.toggle('checked')"><span class="pack-check"></span>ウェットティッシュ</li>
+        <li onclick="this.classList.toggle('checked')"><span class="pack-check"></span>マスク</li>
+        <li onclick="this.classList.toggle('checked')"><span class="pack-check"></span>コンタクト・目薬</li>
+      </ul>
+    </div>
+    <div>
+      <div class="pack-group-title">👗 衣類</div>
+      <ul class="pack-list">
+        <li onclick="this.classList.toggle('checked')"><span class="pack-check"></span>水着（複数枚）</li>
+        <li onclick="this.classList.toggle('checked')"><span class="pack-check"></span>服（日数分）</li>
+        <li onclick="this.classList.toggle('checked')"><span class="pack-check"></span>下着・ハンカチ</li>
+        <li onclick="this.classList.toggle('checked')"><span class="pack-check"></span>帽子</li>
+        <li onclick="this.classList.toggle('checked')"><span class="pack-check"></span>サングラス</li>
+      </ul>
+    </div>
+    <div>
+      <div class="pack-group-title">💊 薬・その他</div>
+      <ul class="pack-list">
+        <li onclick="this.classList.toggle('checked')"><span class="pack-check"></span>酔い止め</li>
+        <li onclick="this.classList.toggle('checked')"><span class="pack-check"></span>風邪薬</li>
+        <li onclick="this.classList.toggle('checked')"><span class="pack-check"></span>お箸</li>
+        <li onclick="this.classList.toggle('checked')"><span class="pack-check"></span>マリン用品</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-title">Have a wonderful journey 🌴</div>
+  <p class="footer-sub" style="margin-top:10px;">2人の新しいはじまり &nbsp;💞&nbsp; May 2026</p>
+</footer>
+
+<script>
+// Particles
+const pc = document.getElementById('particles');
+for (let i = 0; i < 24; i++) {
+  const p = document.createElement('div');
+  p.className = 'particle';
+  p.style.cssText = `left:${10+Math.random()*80}%;bottom:${8+Math.random()*40}%;--dur:${3+Math.random()*5}s;--del:${Math.random()*6}s;`;
+  pc.appendChild(p);
+}
+
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Parallax hero
+const heroImg = document.getElementById('heroImg');
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  if (y < window.innerHeight) heroImg.style.transform = `translateY(${y * 0.28}px)`;
+}, { passive: true });
+</script>
+</body>
+</html>
